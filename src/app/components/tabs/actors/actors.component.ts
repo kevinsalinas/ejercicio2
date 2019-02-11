@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   ngOnInit() {
   }

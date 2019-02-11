@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CineService } from 'src/app/services/cine.service';
 
 @Component({
   selector: 'app-delete',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cineService: CineService) {
+     
+  }
 
   ngOnInit() {
   }

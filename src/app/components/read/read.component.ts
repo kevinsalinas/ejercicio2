@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CineService } from 'src/app/services/cine.service';
 
 @Component({
   selector: 'app-read',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cineService: CineService) { 
+    this.cineService.read('movies').subscribe(data =>{
+      console.log(data);
+    });
+  }
 
   ngOnInit() {
   }

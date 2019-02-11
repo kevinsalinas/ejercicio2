@@ -15,6 +15,15 @@ import { SearchComponent } from './components/shared/search/search.component';
 import { CardComponent } from './components/shared/card/card.component';
 import { FormsComponent } from './components/shared/forms/forms.component';
 
+// Services
+import { CineService } from "./services/cine.service";
+import { HttpClientModule } from '@angular/common/http'; 
+
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,9 +41,14 @@ import { FormsComponent } from './components/shared/forms/forms.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [
+    CineService,
+    HttpClientModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
