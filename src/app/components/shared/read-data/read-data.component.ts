@@ -8,7 +8,7 @@ import { ReadComponent } from '../../read/read.component';
 })
 
 export class ReadDataComponent implements OnInit {
-  @Input() data:any = {};
+  @Input() data:Object = {};
 
   constructor() {
     console.log(this.data);
