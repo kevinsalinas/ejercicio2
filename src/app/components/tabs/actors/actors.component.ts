@@ -18,7 +18,7 @@ export class ActorsComponent implements OnInit {
   constructor(private cineService: CineService) {
     this.cineService.read('actors').subscribe( 
       data => { this.subject.next(data) } ,
-      error => { console.log('error en el read');}
+      error => { console.log('error en el read') }
       
     );
   }
@@ -27,8 +27,7 @@ export class ActorsComponent implements OnInit {
     this.subject.subscribe(data => {
       console.log('mi data',data);
       this.dataElements = data;
-    })
-    
+    })    
   }
 
 }
