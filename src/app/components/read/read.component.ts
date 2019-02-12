@@ -9,7 +9,7 @@ import { CineService } from 'src/app/services/cine.service';
 export class ReadComponent implements OnInit {
 
   constructor(private cineService: CineService) { 
-    this.cineService.read('movies').subscribe(data =>{
+    this.cineService.read('actors').subscribe(data =>{
       console.log(data);
     });
   }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
+import { map } from "rxjs/operators";
 import { Actor } from '../interfaces/actor';
 
 
@@ -19,9 +20,26 @@ export class CineService {
 
   read(cat: string, key?: string): Observable<{}[]> {
     if (key) {
-      return this.db.list(cat + key).valueChanges();
+      // return this.db.list(cat + key).valueChanges();
+      return this.db.list(cat + key).snapshotChanges().pipe(
+        map( items => {
+          return items.map( a => {
+            const data = a.payload.val();
+            const key = a.payload.key;
+            return { key, data};
+          })
+        })
+      );
     } else {
-      return this.db.list(cat).valueChanges();
+      return this.db.list(cat).snapshotChanges().pipe(
+        map( items => {
+          return items.map( a => {
+            const data = a.payload.val();
+            const key = a.payload.key;
+            return { key, data};
+          })
+        })
+      );
     }
   }
 

@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { environment } from '../environments/environment';
+import { ReadDataComponent } from './components/shared/read-data/read-data.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { environment } from '../environments/environment';
     CategoriesComponent,
     SearchComponent,
     CardComponent,
-    FormsComponent
+    FormsComponent,
+    ReadDataComponent
   ],
   imports: [
     BrowserModule,
