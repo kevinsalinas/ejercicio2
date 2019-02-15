@@ -13,7 +13,7 @@ export class AppComponent {
   items: Observable<any[]>;
   constructor(db: AngularFireDatabase) {
     db.list('items').valueChanges().subscribe( data => {
-      console.log("data: ", data);
+      // console.log("data: ", data);
       
     });   
   }

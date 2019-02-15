@@ -25,7 +25,7 @@ export class ActorsComponent implements OnInit {
 
   ngOnInit() {
     this.subject.subscribe(data => {
-      console.log('mi data',data);
+      // console.log('mi data',data);
       this.dataElements = data;
     })    
   }

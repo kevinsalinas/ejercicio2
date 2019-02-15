@@ -1,0 +1,54 @@
+<div class="container">
+    <h1>Formulario</h1>
+    <hr>
+    <form novalidate="" (ngSubmit)="enviar(formusuario)" #formusuario="ngForm">
+        <div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Nombre</label>
+                <div class="col-8">
+                    <input class="form-control"
+                     type="text"
+                     placeholder="Nombre"
+                     name="nombre"
+                     ngModel
+                     required
+                     minlength="5"
+                     >
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Apellido</label>
+                <div class="col-8">
+                    <input class="form-control"
+                     type="text"
+                     placeholder="Apellido"
+                     name="apellido"
+                     ngModel>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Correo</label>
+                <div class="col-8">
+                    <input class="form-control"
+                     type="text"
+                     placeholder="Correo"
+                     name="correo"
+                     ngModel>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-2 col-form-label"></label>
+                <div class="input-group col-md-8">
+                    <button type="submit" class="btn btn-outline-primary">
+                        Enviar
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
