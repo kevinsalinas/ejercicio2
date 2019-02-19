@@ -11,8 +11,27 @@ export class FormsComponent implements OnInit {
   usuario:Object = {
     nombre: "Kevin",
     apellido: "Salinas",
-    correo: "kevin@email.com"
+    correo: "kevin@email.com",
+    pais: '',
+    sexo: 'Hombre'
   }
+
+  paises = [
+    {
+      pais: 'mexico',
+      siglas: 'mx'
+    },
+    {
+      pais: 'estados unidos',
+      siglas: 'usa'
+    },
+    {
+      pais: 'españa',
+      siglas: 'es'
+    }
+  ]
+
+  sexos=['Hombre','Mujer'];
 
   constructor() { }
 
@@ -20,14 +39,11 @@ export class FormsComponent implements OnInit {
   }
 
   enviar( form:NgForm ){
-    console.log('Formulario Enviado');
-    console.log(form);
-    console.log(form.value);
-    console.log(this.usuario);
+    // console.log(form);
     
+    console.log(form.controls.nombre.errors.required == true);
     
-    
-    
+
   }
 
 }
