@@ -11,22 +11,22 @@ export class FormsComponent implements OnInit {
   usuario:Object = {
     nombre: "Kevin",
     apellido: "Salinas",
-    correo: "kevin@email.com",
-    pais: '',
-    sexo: 'Hombre'
+    edad:'',
+    nacionalidad: '',
+    sexo: ''
   }
 
-  paises = [
+  nacionalidades = [
     {
-      pais: 'mexico',
+      nacionalidad: 'mexicana',
       siglas: 'mx'
     },
     {
-      pais: 'estados unidos',
+      nacionalidad: 'americana',
       siglas: 'usa'
     },
     {
-      pais: 'españa',
+      nacionalidad: 'española',
       siglas: 'es'
     }
   ]
@@ -39,7 +39,7 @@ export class FormsComponent implements OnInit {
   }
 
   enviar( form:NgForm ){
-    // console.log(form);
+    console.log(form);
     
     console.log(form.controls.nombre.errors.required == true);
     
