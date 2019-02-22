@@ -9,7 +9,9 @@ import { element } from '@angular/core/src/render3';
 })
 
 export class ReadDataComponent implements OnInit {
+  
   @Input() element:Object = {};
+  @Input() type: string;
   obj:Object = {};
 
   constructor() {

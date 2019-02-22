@@ -1,5 +1,5 @@
-<div class="container">
-    <h1>Formulario</h1>
+<div class="container actor" *ngIf="formType == 'actors'">
+    <h1>Actor</h1>
     <hr>
     <form class="needs-validation" novalidate (ngSubmit)="enviar(formusuario)" #formusuario="ngForm" >
         <div>
@@ -73,4 +73,125 @@
             
         </div>
     </form>
+</div>
+
+<div class="container pelicula" *ngIf="formType == 'movies'">
+        <h1>Pelicula</h1>
+        <hr>
+        <form class="needs-validation" novalidate (ngSubmit)="enviar(formusuario)" #formusuario="ngForm" >
+            <div>
+                <!-- Nombre -->
+                <div class="form-group row">
+                    <label class="col-2 col-form-label" for="name">Nombre</label>
+                    <div class="col-8">
+                        <input  id="name" class="form-control" 
+                        [ngClass]="{'is-invalid': nombre.touched && (nombre.errors?.required || nombre.errors?.minlength) }" 
+                        type="text"
+                        placeholder="Nombre"
+                        name="nombre"
+                        ngModel
+                        required
+                        minlength="5"
+                        #nombre="ngModel"
+                        >
+                        <div *ngIf="nombre.errors?.required" class="invalid-feedback">El nombre es requerido</div>
+                        <div *ngIf="nombre.errors?.minlength" class="invalid-feedback">La longitud minima son 5</div>
+                    </div>
+                </div>
+                <!-- Año -->
+                <div class="form-group row">
+                        <label class="col-2 col-form-label" for="year">Año</label>
+                        <div class="col-8">
+                            <input  id="year" class="form-control" 
+                            [ngClass]="{'is-invalid': year.touched && (year.errors?.required) }" 
+                            type="number"
+                            placeholder="Año"
+                            name="year"
+                            ngModel
+                            required
+                            minlength="5"
+                            #year="ngModel"
+                            >
+                            <div *ngIf="year.errors?.required" class="invalid-feedback">El año es requerido</div>
+                        </div>
+                    </div>
+                    <!-- Categoria -->
+                    <div class="form-group row">
+                            <label class="col-2 col-form-label" for="categoria">Categoria</label>
+                            <div class="col-8">
+                               <select name="categoria" id="categoria" class="form-control" [(ngModel)]="pelicula.categoria" required>
+                                   <option value="">Seleccione</option>
+                                   <option *ngFor="let categoria of categorias"
+                                            [value]="categoria">{{ categoria }}</option>
+                               </select>
+                            </div>
+                    </div>
+                    <!-- Pais -->
+                <div class="form-group row">
+                        <label class="col-2 col-form-label" for="pais">Pais</label>
+                        <div class="col-8">
+                            <input  id="pais" class="form-control" 
+                            [ngClass]="{'is-invalid': pais.touched && (pais.errors?.required || pais.errors?.minlength) }" 
+                            type="text"
+                            placeholder="Pais"
+                            name="pais"
+                            ngModel
+                            required
+                            minlength="5"
+                            #pais="ngModel"
+                            >
+                            <div *ngIf="pais.errors?.required" class="invalid-feedback">El pais es requerido</div>
+                            <div *ngIf="pais.errors?.minlength" class="invalid-feedback">La longitud minima son 5</div>
+                        </div>
+                    </div>
+                    <!-- Enviar -->
+                    <div class="form-group row">
+                            <label for="" class="col-2 col-form-label"></label>
+                            <div class="input-group col-md-8">
+                                <button 
+                                type="submit" class="btn btn-outline-primary">
+                                    Enviar
+                                </button>
+                            </div>
+                        </div>
+            </div>
+        </form>
+</div>
+    
+<!-- Categoria -->
+<div class="container categoria" *ngIf="formType == 'categories'">
+        <h1>Categoria</h1>
+        <hr>
+        <form class="needs-validation" novalidate (ngSubmit)="enviar(formusuario)" #formusuario="ngForm" >
+            <div>
+                <!-- Nombre -->
+                <div class="form-group row">
+                    <label class="col-2 col-form-label" for="name">Nombre</label>
+                    <div class="col-8">
+                        <input  id="name" class="form-control" 
+                        [ngClass]="{'is-invalid': nombre.touched && (nombre.errors?.required || nombre.errors?.minlength) }" 
+                        type="text"
+                        placeholder="Nombre"
+                        name="nombre"
+                        ngModel
+                        required
+                        minlength="5"
+                        #nombre="ngModel"
+                        >
+                        <div *ngIf="nombre.errors?.required" class="invalid-feedback">El nombre es requerido</div>
+                        <div *ngIf="nombre.errors?.minlength" class="invalid-feedback">La longitud minima son 5</div>
+                    </div>
+                </div>
+                <!-- Enviar -->
+                <div class="form-group row">
+                        <label for="" class="col-2 col-form-label"></label>
+                        <div class="input-group col-md-8">
+                            <button 
+                            type="submit" class="btn btn-outline-primary">
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </form>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class FormsComponent implements OnInit {
 
+  @Input() formType: Object;
   usuario:Object = {
     nombre: "Kevin",
     apellido: "Salinas",
@@ -33,9 +34,11 @@ export class FormsComponent implements OnInit {
 
   sexos=['Hombre','Mujer'];
 
-  constructor() { }
-
+  constructor() { 
+  }
+  
   ngOnInit() {
+    console.log(this.formType);
   }
 
   enviar( form:NgForm ){

@@ -13,12 +13,6 @@ export class CreateComponent implements OnInit {
 
 
   constructor(public cs:CineService) {
-    this.cs.create('actors',{
-      name: 'kevin',
-      age: 20,
-      gender: 'male',
-      nationality: 'canadian'
-    });
    }
 
   ngOnInit() {

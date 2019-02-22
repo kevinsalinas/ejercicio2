@@ -1,10 +1,36 @@
-<div class="card" style="width: 18rem;" *ngIf="element">
+<!-- Actor -->
+<div class="card" style="width: 18rem;" *ngIf="element && type=='actor'">
   <div class="card-body">
     <!-- Pintar las variables -->
-    <h5 class="card-title">{{ element.key }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <h5 class="card-title">{{ element.data.name }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{element.data.nationality}}</h6>
+    <p class="card-text">{{element.data.age}}</p>
+    <p class="card-text">{{element.data.gender}}</p>
+    <a href="#" class="card-link">Actualizar</a>
+    <a href="#" class="card-link">Borrar</a>
   </div>
+</div>
+<!-- Movie -->
+<div class="card" style="width: 18rem;" *ngIf="element && type=='movie'">
+    <div class="card-body">
+      <!-- Pintar las variables -->
+      <h5 class="card-title">{{ element.data.name }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{element.data.year}}</h6>
+      <p class="card-text">{{element.data.country}}</p>
+      <a href="#" class="card-link">Actualizar</a>
+      <a href="#" class="card-link">Borrar</a>
+    </div>
+  </div>
+<!-- Category -->
+  <div class="card" style="width: 18rem;" *ngIf="element && type=='category'">
+      <div class="card-body">
+        <!-- Pintar las variables -->
+        <h5 class="card-title">{{ element.data.genre }}</h5>
+        <a href="#" class="card-link">Actualizar</a>
+        <a href="#" class="card-link">Borrar</a>
+      </div>
+    </div>
+
+<div *ngIf="!element">
+  No se encontraron registros
 </div>
