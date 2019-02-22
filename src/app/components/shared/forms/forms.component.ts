@@ -57,6 +57,7 @@ export class FormsComponent implements OnInit {
       if(params && this.parentParams != ''){
         this.cineService.read(this.parentParams, params['id']).subscribe( (existingData: FirebaseData[]) => 
           {
+            // TODO: Verificar el orden de los campos y sus valores
             if(this.parentParams === 'actors'){
               this.formObject = {
                 id: params['id'],
@@ -97,6 +98,7 @@ export class FormsComponent implements OnInit {
       const path = prms[0].path;
       if (path === 'update') {
         let updatable: any;
+        // TODO: Agregar peliculas y categorias al switch
         switch (this.parentParams) {
           case 'actors':
           updatable = {
