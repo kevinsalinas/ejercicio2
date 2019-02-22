@@ -1,7 +1,7 @@
 <div *ngIf="pathRef == 'read'">
         <div class="card-columns mt-5">
                 <div *ngIf="dataElements.length > 0"></div>
-                    <app-read-data [element]="element" [type]="'actor'" *ngFor="let element of dataElements; let i=index">
+                    <app-read-data [element]="element" [type]="'actors'" *ngFor="let element of dataElements; let i=index">
                     
                     </app-read-data>
             </div>

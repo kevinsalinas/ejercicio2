@@ -21,7 +21,8 @@ export class CineService {
   read(cat: string, key?: string): Observable<{}[]> {
     if (key) {
       // return this.db.list(cat + key).valueChanges();
-      return this.db.list(cat + key).snapshotChanges().pipe(
+      return this.db.list(cat + '/' + key).snapshotChanges()
+      .pipe(
         map( items => {
           return items.map( a => {
             const data = a.payload.val();

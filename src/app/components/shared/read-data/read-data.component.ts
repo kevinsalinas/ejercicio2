@@ -20,7 +20,9 @@ export class ReadDataComponent implements OnInit {
    }
 
   ngOnInit() {
-    
+    console.log("Element: ", this.element);
+    console.log("Type:", this.type);
+
   }
 
 }

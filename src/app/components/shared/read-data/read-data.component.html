@@ -1,33 +1,33 @@
 <!-- Actor -->
-<div class="card" style="width: 18rem;" *ngIf="element && type=='actor'">
+<div class="card" style="width: 18rem;" *ngIf="element && type=='actors'">
   <div class="card-body">
     <!-- Pintar las variables -->
     <h5 class="card-title">{{ element.data.name }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{element.data.nationality}}</h6>
     <p class="card-text">{{element.data.age}}</p>
     <p class="card-text">{{element.data.gender}}</p>
-    <a href="#" class="card-link">Actualizar</a>
-    <a href="#" class="card-link">Borrar</a>
+    <a [routerLink]="['/update/',type, element.key]" class="card-link">Actualizar</a>
+    <a [routerLink]="['/delete/',type, element.key]" class="card-link">Borrar</a>
   </div>
 </div>
 <!-- Movie -->
-<div class="card" style="width: 18rem;" *ngIf="element && type=='movie'">
+<div class="card" style="width: 18rem;" *ngIf="element && type=='movies'">
     <div class="card-body">
       <!-- Pintar las variables -->
       <h5 class="card-title">{{ element.data.name }}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{element.data.year}}</h6>
       <p class="card-text">{{element.data.country}}</p>
-      <a href="#" class="card-link">Actualizar</a>
-      <a href="#" class="card-link">Borrar</a>
+      <a [routerLink]="['/update/',type, element.key]" class="card-link">Actualizar</a>
+      <a [routerLink]="['/delete/',type, element.key]" class="card-link">Borrar</a>
     </div>
   </div>
 <!-- Category -->
-  <div class="card" style="width: 18rem;" *ngIf="element && type=='category'">
+  <div class="card" style="width: 18rem;" *ngIf="element && type=='categories'">
       <div class="card-body">
         <!-- Pintar las variables -->
         <h5 class="card-title">{{ element.data.genre }}</h5>
-        <a href="#" class="card-link">Actualizar</a>
-        <a href="#" class="card-link">Borrar</a>
+        <a [routerLink]="['/update/',type, element.key]" class="card-link">Actualizar</a>
+        <a [routerLink]="['/delete/',type, element.key]" class="card-link">Borrar</a>
       </div>
     </div>
 
